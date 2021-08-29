@@ -6,7 +6,6 @@
 //     return str;
 //   }
 
-
 let darVuelta = (str)=>{
     let prop = str;
     let aux = "";
@@ -15,6 +14,14 @@ let darVuelta = (str)=>{
     }
 
     return aux;
+
+    // for (let index = 0; index < str.length; index++) {
+    //           str += str[index];
+    //           str.substr(1);
+    //         }
+    // return str;
 }
 
-console.log(darVuelta("Anasheee"));
+
+
+console.log(darVuelta("hola"));
