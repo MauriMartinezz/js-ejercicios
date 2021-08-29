@@ -10,10 +10,8 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-
-  return array[array.length];
+  return array[array.length -1];
 }
-
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
@@ -115,6 +113,15 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  let result = 1;
+  if(multiplicarArgumentos.arguments.length === 0){
+    return 0;
+  }else{
+    for(let i = 0; i< multiplicarArgumentos.arguments.length; i++){
+      result = result * multiplicarArgumentos.arguments[i];
+    }
+    return result;
+  }
 }
 
 function cuentoElementos(arreglo) {
@@ -133,11 +140,11 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario.
   //Escribe tu código aquí
-
-  if (numeroDeDia == 1 || numeroDeDia == 6) {
-    return "Es finde semana";
+  const days = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes","sabado"];
+  if (days[numeroDeDia - 1] == "sabado" || days[numeroDeDia - 1] == "domingo") {
+    return "Es fin de semana";
   } else {
-    return "Es dia laboral";
+    return "Es dia Laboral";
   }
 }
 
@@ -185,7 +192,7 @@ function mesesDelAño(array) {
       includedMonths.push(array[index]);
     }
   }
-  if (includedMonths.length > 3) return "No se encontraron los meses pedidos";
+  if (includedMonths.length != 3) return "No se encontraron los meses pedidos";
   return includedMonths;
 }
 
@@ -213,20 +220,20 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let array = [];
+  let result;
   for (let index = 0; index < 10; index++) {
-    if(numero != index){
+    if(numero !== index){
       numero += 2;
-      console.log( "El numero es" + numero);
+      array.push(numero);
       }else{
-      break;
+      return "Se interrumpió la ejecución";
     }
-    
   }
-  
-  return "Se interrumpio la ejecucion";
+  return array
 
 }
-// console.log(breakStatement(2));
+// console.log(breakStatement(50));
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array.
@@ -238,18 +245,16 @@ function continueStatement(numero) {
   let arrayNumbers = [];
   for (let index = 0; index < 10; index++) {
     if(index != 5){
-      arrayNumbers.push(numero);
       numero += 2;
+      arrayNumbers.push(numero);
     }else{
-      arrayNumbers.pop();
       continue;
-      
     }
   }
   return arrayNumbers;
 }
-console.log(continueStatement(5));
-// console.log(5 == "5");
+console.log(continueStatement(50));
+
 // No modificar nada debajo de esta línea
 // --------------------------------
 

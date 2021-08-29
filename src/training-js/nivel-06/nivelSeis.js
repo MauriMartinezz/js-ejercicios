@@ -4,8 +4,16 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
+  let aux = nombre.substring(1);
+  let aux2 = [...nombre];
+  let firstMay = nombre[0].toUpperCase();
+  aux2.shift()
+  aux2.unshift(firstMay);
+
+  return nombre[0].toUpperCase() + aux;
 }
 
+console.log(mayuscula("jose"));
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:

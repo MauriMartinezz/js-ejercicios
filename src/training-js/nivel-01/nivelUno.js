@@ -96,7 +96,7 @@ function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
 
-  return x/y;
+  return x%y;
 }
 
 function esPar(num) {
@@ -141,7 +141,7 @@ function redondearNumero(num) {
   // Redondea "num" al entero más próximo y devuélvelo
   // Tu código:
 
-  return Math.floor(num);
+  return Math.round(num);
 }
 
 function redondearHaciaArriba(num) {
@@ -163,7 +163,7 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-
+  if(numero === 0) return false;
   return numero > 0 ? "Es positivo" : "Es negativo";
 }
 

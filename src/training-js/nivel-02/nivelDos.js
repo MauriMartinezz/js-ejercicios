@@ -16,7 +16,7 @@ function mayoriaDeEdad(edad) {
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
 
-  return edad > 18 ? "Allowed" : "Not allowed";
+  return edad >= 18 ? "Allowed" : "Not allowed";
 }
 
 function conection(status) {
@@ -50,7 +50,7 @@ function conection(status) {
       case "ingles":
         return "Hello!";
       default:
-      return "Hola";
+      return "Hola!";
   }
   }
 
@@ -93,7 +93,7 @@ function estaEnRango(numero) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
-  return numero <= 50 && numero >= 20;
+  return 50 > numero && numero > 20;
 }
 
 function esEntero(numero) {
@@ -105,9 +105,8 @@ function esEntero(numero) {
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
 
-  return false;
+  return numero%1 == 0;
 }
-
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
   // Si "numero" es divisible entre 5, devuelve "buzz"
@@ -139,7 +138,7 @@ function operadoresLogicos(num1, num2, num3) {
   }else if(num1 === 0 || num2 === 0 || num3 === 0){
     return "Error";
   }else if(num1> num2 && num1>num3 && num1 >0){
-    return "Numero 1 es mayor y positivo";
+    return "Número 1 es mayor y positivo";
   }else if(num3 > num1 && num3 > num2){
     return num3+1;
   }
@@ -153,23 +152,12 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
-  if(numero == 0 || 1){
-    let count = 1;
-    var suma = 0;
-    do{
-      count++;
-      if(numero%count == 0){
-        suma++;     
-      }
-    }while(count < numero)
+  if(numero <= 1) return false;
+  for(let i = 2; i< numero; i++){
+    if(numero%i===0) return false;
   }
-  if(suma < 2){
-    return "true";
-  }else{
-    return "false";
-  }
+  return true;
 }
-
 
 function esVerdadero(valor) {
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero”
