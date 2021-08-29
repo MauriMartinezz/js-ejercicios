@@ -146,7 +146,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
 
-  let arrayNumber = [...n + ""];
+  let arrayNumber = [...(n + "")];
   if (Number(arrayNumber[0]) === 9) {
     return true;
   } else {
@@ -159,17 +159,16 @@ function todosIguales(arreglo) {
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí
   const element = arreglo[0];
-  let count = 0
+  let count = 0;
   for (let index = 0; index < arreglo.length; index++) {
-    if(arreglo[index] === element){
-      count = count+1;
-      if(count === arreglo.length)  return true;
-      }else{
-        return false;
-      }
-    } 
- }
-
+    if (arreglo[index] === element) {
+      count = count + 1;
+      if (count === arreglo.length) return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de
@@ -178,41 +177,79 @@ function mesesDelAño(array) {
   // Tu código:
   let includedMonths = [];
   for (let index = 0; index < array.length; index++) {
-    if(array[index] === "Enero" ||array[index] === "Marzo" || array[index] ==="Noviembre"){
+    if (
+      array[index] === "Enero" ||
+      array[index] === "Marzo" ||
+      array[index] === "Noviembre"
+    ) {
       includedMonths.push(array[index]);
     }
   }
-  if(includedMonths.length > 3) return "No se encontraron los meses pedidos"
-  return includedMonths
+  if (includedMonths.length > 3) return "No se encontraron los meses pedidos";
+  return includedMonths;
 }
 
-
-console.log(mesesDelAño(["febrero", "Enero", "Marzo", "Noviembre"]));
+// console.log(mesesDelAño(["febrero", "Enero", "Marzo", "Noviembre"]));
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  let biggerThanHundred = []
+   array.map((num)=> num > 100 == true ? biggerThanHundred.push(num) : false);
+
+   return biggerThanHundred;
 }
 
+// console.log(mayorACien([101,102,90,44,1002]));
+
 function breakStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Iterar en un bucle aumentando en 2 el numero recibido hasta un
+  // límite de 10 veces.
   //Guardar cada nuevo valor en un array.
   //Devolver el array
-  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y
+  //Si en algún momento el valor de la suma y la cantidad de iteraciones
+  // coinciden,
+  // debe interrumpirse la ejecución y
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-}
+  for (let index = 0; index < 10; index++) {
+    if(numero != index){
+      numero += 2;
+      console.log( "El numero es" + numero);
+      }else{
+      break;
+    }
+    
+  }
+  
+  return "Se interrumpio la ejecucion";
 
+}
+// console.log(breakStatement(2));
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array.
   //Devolver el array
-  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
+  //Cuando el número de iteraciones alcance el valor 5,
+  // no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let arrayNumbers = [];
+  for (let index = 0; index < 10; index++) {
+    if(index != 5){
+      arrayNumbers.push(numero);
+      numero += 2;
+    }else{
+      arrayNumbers.pop();
+      continue;
+      
+    }
+  }
+  return arrayNumbers;
 }
-
+console.log(continueStatement(5));
+// console.log(5 == "5");
 // No modificar nada debajo de esta línea
 // --------------------------------
 
