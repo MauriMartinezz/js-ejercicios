@@ -210,6 +210,8 @@ En este caso, _no depende_ donde hayamos definido la función, lo único que imp
 //agregamos la función como método del objeto `o`
 > o.f = loguea;
 
+>var o = {prop: 37, f: function loguea(){this.prop}}; ---> 37
+
 > console.log(o.f());
 < 37
 // el resultado es le mismo!
